@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
-    font-family: Poppins;
+    font-family: 'Poppins';
     margin: 0;
     font-size: 16px;
-    background-color: greenyellow;
+    background: linear-gradient(160deg, #fa8f1d ,#356915);
 }
 *{
     box-sizing: border-box;
@@ -14,7 +14,7 @@ body{
     list-style: none;
 }
 :root{
-    --border-color: rgba(179, 201, 12, 0.646);
+    --border-color: #ffd52f;
     --w-image: 520px;
     --calculate: calc(3 / 2);
 }
@@ -76,7 +76,7 @@ header nav{
     top: 50px;
     left: 50px;
     content: '';
-    background-color: greenyellow;
+    background-color: #356915;
     width: 400px;
     height: 300px;
     z-index: 10;
@@ -155,7 +155,7 @@ header nav{
 }
 .arrows button{
     background-color: transparent;
-   border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
     color: #fff;
     font-family: monospace;
     font-size: large;
@@ -257,6 +257,15 @@ header nav{
     .carousel .list .item .main-content .content h2{
         font-size: 2em;
     }
+    .about{
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+    }
+    .all-text{
+        text-align: center;
+        margin: 40px;
+    }
 }
 @media screen and (max-width: 767px){
     .carousel .list .item .image{
@@ -276,4 +285,131 @@ header nav{
         left: 30%;
         justify-content: center;
     }
+    .about .main img{
+        margin-bottom: 35px;
+    }
+    .all-text h1{
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
 }
+
+
+/* about section*/
+.about{
+    height: 100vh;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    overflow: hidden; /* To hide elements before they animate in */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Style when element is in view */
+.about.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about .main img {
+    width: 580px;
+    max-width: 100%;
+}
+
+.all-text{
+    width: 600px;
+    max-width: 100%;
+    padding: 0 10px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.5s ease-out 0.5s, transform 1.5s ease-out 0.5s;
+}
+.main{
+    width: 1290px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+.all-text h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.all-text h1{
+    font-size: 65px;
+    color: #111111;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.all-text p{
+    font-family: 'Poppins' , sans-serif;
+    font-size: 16px;
+    color: #000;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+/* Style when element is in view */
+.all-text.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zoom-in animation for the image */
+.main img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-out 2s, transform 1.5s ease-out 2s;
+}
+
+/* Style when element is in view */
+.main img.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.footer{
+    color: #000000;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.footer-bottom {
+    background-color: #c09f44;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   
+
+    .footer-section {
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        margin: 10px 0;
+    }
+}
+

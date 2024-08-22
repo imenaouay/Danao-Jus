@@ -52,3 +52,25 @@ const changeSlider = () => {
 let autoPlay = setInterval(() => {
     next.click();
 }, 5000);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let options = {
+        threshold: 0.9 // Trigger when 10% of the element is visible
+    };
+
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+            }
+        });
+    }, options);
+
+    let elements = document.querySelectorAll(".about, .all-text, .main img");
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+
